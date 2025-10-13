@@ -52,3 +52,17 @@
 - **Tasks Performed:**  
 - **Deliverables:**  
 - **Interpretation:**  
+
+## Alignment
+- **Tools Used:** 
+  - Salmon
+  - Python
+- **Tasks Performed:**  
+- **Deliverables:**  
+- **Interpretation:**  
+
+## Annotation & Quantification
+- **Tools Used:** 
+- **Tasks Performed:**  
+- **Deliverables:**  
+- **Interpretation:**  
