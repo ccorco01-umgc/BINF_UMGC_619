@@ -1,7 +1,0 @@
-Module	Section	Sample Name	Source
-FastQC	all_sections	SRR27129337_2	/home/StudentFirst/BIFS619/project/fastqc/SRR27129337_2_fastqc.zip
-FastQC	all_sections	SRR27129337_1	/home/StudentFirst/BIFS619/project/fastqc/SRR27129337_1_fastqc.zip
-FastQC	all_sections	SRR27129218_2	/home/StudentFirst/BIFS619/project/fastqc/SRR27129218_2_fastqc.zip
-FastQC	all_sections	SRR27129336_2	/home/StudentFirst/BIFS619/project/fastqc/SRR27129336_2_fastqc.zip
-FastQC	all_sections	SRR27129218_1	/home/StudentFirst/BIFS619/project/fastqc/SRR27129218_1_fastqc.zip
-FastQC	all_sections	SRR27129336_1	/home/StudentFirst/BIFS619/project/fastqc/SRR27129336_1_fastqc.zip
