@@ -57,8 +57,14 @@
 - **Tools Used:** 
   - Salmon
   - Python
+  - Matplotlib
 - **Tasks Performed:**  
+  - Aligned paired end sequences
+  - Created plots to display alignment metrics
 - **Deliverables:**  
+- Example screenshots included in the `/plots/` directory:  
+  - `percent_mapped.png`  
+  - `total_reads_processed.png`
 - **Interpretation:**  
 
 ## Annotation & Quantification
