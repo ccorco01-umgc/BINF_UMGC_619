@@ -7,22 +7,30 @@ sudo apt update
 sudo apt install -y fastp wget
 
 # Make folders
-cd ~/BIFS619_GP/BINF_UMGC_619
+cd ~/BINF_UMGC_619
 mkdir -p read_cleaning
 cd read_cleaning
 mkdir -p fastq_rawdata cleaned results
 
-# Download FASTQ files
-echo "Downloading FASTQ files"
+# Check for FASTQ files before downloading
+echo "Checking for FASTQ files..."
 cd fastq_rawdata
-wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/018/SRR27129218/SRR27129218_1.fastq.gz
-wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/018/SRR27129218/SRR27129218_2.fastq.gz
-wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/036/SRR27129336/SRR27129336_1.fastq.gz
-wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/036/SRR27129336/SRR27129336_2.fastq.gz
-wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/037/SRR27129337/SRR27129337_1.fastq.gz
-wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/037/SRR27129337/SRR27129337_2.fastq.gz
 
-# Go back to read_cleaning folder
+
+if [ -f SRR27129218_1.fastq.gz ] && [ -f SRR27129218_2.fastq.gz ] && \
+   [ -f SRR27129336_1.fastq.gz ] && [ -f SRR27129336_2.fastq.gz ] && \
+   [ -f SRR27129337_1.fastq.gz ] && [ -f SRR27129337_2.fastq.gz ]; then
+    echo "All FASTQ files already present. Skipping download."
+else
+    echo "Downloading FASTQ files..."
+    wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/018/SRR27129218/SRR27129218_1.fastq.gz
+    wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/018/SRR27129218/SRR27129218_2.fastq.gz
+    wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/036/SRR27129336/SRR27129336_1.fastq.gz
+    wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/036/SRR27129336/SRR27129336_2.fastq.gz
+    wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/037/SRR27129337/SRR27129337_1.fastq.gz
+    wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/037/SRR27129337/SRR27129337_2.fastq.gz
+fi
+
 cd ..
 
 # Begin read cleaning
@@ -38,7 +46,8 @@ fastp \
   --qualified_quality_phred 20 \
   --length_required 50 \
   --thread 4 \
-  --html results/SRR27129218.fastp.html
+  --html results/SRR27129218.fastp.html \
+  --json results/SRR27129218.fastp.json
 
 echo "Cleaning SRR27129336"
 fastp \
@@ -50,7 +59,8 @@ fastp \
   --qualified_quality_phred 20 \
   --length_required 50 \
   --thread 4 \
-  --html results/SRR27129336.fastp.html
+  --html results/SRR27129336.fastp.html \
+  --json results/SRR27129336.fastp.json
 
 echo "Cleaning SRR27129337"
 fastp \
@@ -62,7 +72,8 @@ fastp \
   --qualified_quality_phred 20 \
   --length_required 50 \
   --thread 4 \
-  --html results/SRR27129337.fastp.html
+  --html results/SRR27129337.fastp.html \
+  --json results/SRR27129337.fastp.json
 
 echo "Read cleaning finished successfully."
 
