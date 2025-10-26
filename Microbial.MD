@@ -18,7 +18,7 @@
   wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/018/SRR27129218/SRR27129218_2.fastq.gz
   wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/018/SRR27129218/SRR27129218_1.fastq.gz
   wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/036/SRR27129218/SRR27129336_2.fastq.gz
-  wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/037/SRR27129218/SRR27129336_1.fastq.gz
+  wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/036/SRR27129218/SRR27129336_1.fastq.gz
   wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/037/SRR27129337/SRR27129337_2.fastq.gz
   wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR271/037/SRR27129337/SRR27129337_1.fastq.gz
 
@@ -48,6 +48,26 @@
   - Overall, the sequencing data show **good read quality and appropriate GC content**. Adapter contamination was negligible. Duplication levels are elevated but still within a range that allows downstream analysis. With these considerations, the datasets are suitable for further analysis.
 
 ## Read Cleaning
+- **Tools Used:** 
+- **Tasks Performed:**  
+- **Deliverables:**  
+- **Interpretation:**  
+
+## Alignment
+- **Tools Used:** 
+  - Salmon
+  - Python
+  - Matplotlib
+- **Tasks Performed:**  
+  - Aligned paired end sequences
+  - Created plots to display alignment metrics
+- **Deliverables:**  
+- Example screenshots included in the `/plots/` directory:  
+  - `percent_mapped.png`  
+  - `total_reads_processed.png`
+- **Interpretation:**  
+
+## Annotation & Quantification
 - **Tools Used:** 
 - **Tasks Performed:**  
 - **Deliverables:**  

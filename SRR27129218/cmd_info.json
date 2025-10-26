@@ -1,0 +1,11 @@
+{
+    "salmon_version": "1.4.0",
+    "index": "alignment/salmon_index",
+    "libType": "A",
+    "mates1": "read_cleaning/cleaned/SRR27129218_1.clean.fastq.gz",
+    "mates2": "read_cleaning/cleaned/SRR27129218_2.clean.fastq.gz",
+    "threads": "4",
+    "output": "alignment/aligned/SRR27129218",
+    "validateMappings": [],
+    "auxDir": "aux_info"
+}
