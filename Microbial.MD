@@ -63,9 +63,9 @@
   - Aligned paired end sequences
   - Created plots to display alignment metrics
 - **Deliverables:**  
-- Example screenshots included in the `/plots/` directory:  
-  - `percent_mapped.png`  
-  - `total_reads_processed.png`
+  - Example screenshots included in the `/plots/` directory:  
+    - `percent_mapped.png`  
+    - `total_reads_processed.png`
 - **Interpretation:**  
   - Overall, the alignment was successful. Approximately 3.9M reads were processed for SRR27129218, 6.0M for SRR27129336, 6.7M for SRR27129337. Of the reads that were processed approximately 90%, 87%, and 85% were mapped respectively. A mapping percentage above 80% is considered to be good. 
 
