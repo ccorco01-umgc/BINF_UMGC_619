@@ -49,9 +49,18 @@
 
 ## Read Cleaning
 - **Tools Used:** 
+  - Fastp v0.23.4
 - **Tasks Performed:**  
+  - Processed paired-end raw reads for adapter trimming, quality filtering, and minimum length enforcement.
+  - Used Fastp to automatically handle pairing between forward and reverse reads.
+  - Compared pre- and post-QC results to assess read retention, GC content, and sequence length distribution.
+  - Reviewed Fastp HTML and JSON reports to evaluate trimming performance and overall sequence quality.
 - **Deliverables:**  
+  - Cleaned paired-end FASTQ files (*_clean_R1.fastq, *_clean_R2.fastq)
+  - Quality control reports (fastp.html, fastp.json)
+  - Pre- and post-QC summary metrics
 - **Interpretation:**  
+  - The read cleaning process showed that the sequencing data were already of high quality. Minimal changes were observed between pre- and post-QC results in read count, GC content, and length distribution. These results indicate that the raw reads required little correction and were suitable for downstream assembly and annotation steps.
 
 ## Alignment
 - **Tools Used:** 
