@@ -2,7 +2,7 @@
 
 ## Preparation
 - **GitHub Setup**
-  - Team members: __________________________  
+  - Team members: Caitlin Corcoran, Amanda Kemper, Nicholas Lawson, Dechao Zhu
 
 ## Data Retrieval
 - **NCBI SRA accessions used:**
