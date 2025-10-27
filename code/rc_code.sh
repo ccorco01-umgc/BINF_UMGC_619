@@ -16,7 +16,6 @@ mkdir -p fastq_rawdata cleaned results
 echo "Checking for FASTQ files..."
 cd fastq_rawdata
 
-
 if [ -f SRR27129218_1.fastq.gz ] && [ -f SRR27129218_2.fastq.gz ] && \
    [ -f SRR27129336_1.fastq.gz ] && [ -f SRR27129336_2.fastq.gz ] && \
    [ -f SRR27129337_1.fastq.gz ] && [ -f SRR27129337_2.fastq.gz ]; then
@@ -40,8 +39,8 @@ echo "Cleaning SRR27129218"
 fastp \
   -i fastq_rawdata/SRR27129218_1.fastq.gz \
   -I fastq_rawdata/SRR27129218_2.fastq.gz \
-  -o cleaned/SRR27129218_1.clean.fastq.gz \
-  -O cleaned/SRR27129218_2.clean.fastq.gz \
+  -o cleaned/SRR27129218_1.fastp_cleaned.fastq.gz \
+  -O cleaned/SRR27129218_2.fastp_cleaned.fastq.gz \
   --detect_adapter_for_pe \
   --qualified_quality_phred 20 \
   --length_required 50 \
@@ -53,8 +52,8 @@ echo "Cleaning SRR27129336"
 fastp \
   -i fastq_rawdata/SRR27129336_1.fastq.gz \
   -I fastq_rawdata/SRR27129336_2.fastq.gz \
-  -o cleaned/SRR27129336_1.clean.fastq.gz \
-  -O cleaned/SRR27129336_2.clean.fastq.gz \
+  -o cleaned/SRR27129336_1.fastp_cleaned.fastq.gz \
+  -O cleaned/SRR27129336_2.fastp_cleaned.fastq.gz \
   --detect_adapter_for_pe \
   --qualified_quality_phred 20 \
   --length_required 50 \
@@ -66,8 +65,8 @@ echo "Cleaning SRR27129337"
 fastp \
   -i fastq_rawdata/SRR27129337_1.fastq.gz \
   -I fastq_rawdata/SRR27129337_2.fastq.gz \
-  -o cleaned/SRR27129337_1.clean.fastq.gz \
-  -O cleaned/SRR27129337_2.clean.fastq.gz \
+  -o cleaned/SRR27129337_1.fastp_cleaned.fastq.gz \
+  -O cleaned/SRR27129337_2.fastp_cleaned.fastq.gz \
   --detect_adapter_for_pe \
   --qualified_quality_phred 20 \
   --length_required 50 \
