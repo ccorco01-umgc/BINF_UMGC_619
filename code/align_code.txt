@@ -1,0 +1,27 @@
+# Make folder
+cd ~/BINF_UMGC_619
+mkdir alignment
+cd alignment
+mkdir aligned
+
+# Download Reference genome and GFF file
+wget -nc https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/013/425/GCF_000013425.1_ASM1342v1/GCF_000013425.1_ASM1342v1_cds_from_genomic.fna.gz
+wget -nc https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/013/425/GCF_000013425.1_ASM1342v1/GCF_000013425.1_ASM1342v1_genomic.gff.gz
+
+# Install Salmon
+sudo apt install salmon
+
+# Create Salmon Index
+salmon index -t GCF_000013425.1_ASM1342v1_cds_from_genomic.fna.gz -i salmon_index_transcripts -k 31
+
+# Run Alignment
+for srr in SRR27129218 SRR27129336 SRR27129337
+do
+  echo "Processing $srr..."
+  salmon quant -i salmon_index_transcripts -l A \
+  -1 ../read_cleaning/cleaned/${srr}_1.fastp_cleaned.fastq.gz \
+  -2 ../read_cleaning/cleaned/${srr}_2.fastp_cleaned.fastq.gz \
+  -p 4 -o aligned/${srr} --validateMappings
+done
+
+echo "All samples processed!"
