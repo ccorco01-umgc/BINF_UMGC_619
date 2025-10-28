@@ -79,7 +79,28 @@
   - Overall, the alignment was successful. Approximately 3.9M reads were processed for SRR27129218, 6.0M for SRR27129336, 6.7M for SRR27129337. Of the reads that were processed approximately 90%, 87%, and 85% were mapped respectively. A mapping percentage above 80% is considered to be good. 
 
 ## Annotation & Quantification
-- **Tools Used:** 
-- **Tasks Performed:**  
-- **Deliverables:**  
-- **Interpretation:**  
+
+### Tools Used
+- **Salmon** (mapping-based mode) for transcript quantification (TPM)
+- **Python** (pandas, matplotlib, seaborn) for data processing and plotting
+- **MultiQC** for summarizing QC metrics across samples
+
+### Tasks Performed
+- Quantified microbial RNA-seq reads for three samples (**SRR27129218**, **SRR27129337**, **SRR27129336**) with Salmon to obtain per-gene **TPM** values.
+- Parsed each sample’s `quant.sf`, merged them into a combined table, and computed **average TPM** per gene.
+- Ranked genes by average TPM and selected the **top 10** most highly expressed.
+- Generated a **heatmap** comparing expression of these top genes across all samples.
+- Ran **MultiQC** to confirm consistency of read counts, mapping, and other QC signals.
+
+### Deliverables
+- `plots/top10_genes_table.csv` — Top 10 genes with TPM per sample and average TPM  
+- `plots/top10_heatmap.png` — Heatmap of top-gene expression across samples  
+
+> Heatmap preview:  
+> ![Top 10 expressed genes (TPM)](plots/top10_heatmap.png)
+
+### Interpretation 
+- A small set of genes that appears to be **consistently very highly expressed** across all three samples as most averages ~1.2k–2.2k TPM; one peak ~3.3k, suggesting they are core transcripts for the organism under these conditions.
+- The **overall pattern is similar** between samples, indicating good technical consistency and reproducible biology.
+- One gene (`…YP_500074.1_1417`) is **near zero in SRR27129218** but **high in the other two** samples—an outlier worth verifying.
+- Magnitudes differ slightly by sample (**SRR27129337** tends to be highest, **SRR27129336** slightly lower, **SRR27129218** lowest), but the **rank order** of highly expressed genes is largely preserved.
